@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Campus Breaking News</title>
+
+<style>
+    
+
+body{
+font-family:Georgia,serif;
+background:#f4f4f4;
+margin:0;
+}
+
+.header{
+background:black;
+color:white;
+padding:15px;
+text-align:center;
+font-size:14px;
+}
+
+.title{
+text-align:center;
+font-size:48px;
+margin:20px;
+font-weight:bold;
+}
+
+.ticker{
+background:red;
+color:white;
+padding:10px;
+font-weight:bold;
+text-align:center;
+}
+
+.container{
+width:70%;
+margin:auto;
+}
+
+.news{
+background:white;
+padding:20px;
+margin:20px 0;
+border-left:6px solid red;
+box-shadow:0 3px 10px rgba(0,0,0,0.2);
+}
+
+.news h3{
+margin:0;
+}
+
+.time{
+color:gray;
+font-size:12px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="header">
+👀 Live Readers: {{ live_readers }}
+</div>
+
+<div class="title">
+CAMPUS DAILY NEWS
+</div>
+
+<div class="ticker">
+🚨 BREAKING: Campus Meme Headlines
+</div>
+
+<div class="container">
+
+{% for news in all_news %}
+
+<div class="news">
+
+<h3>● ANONYMOUS EXPOSURE | JUST NOW 🔥</h3>
+
+<p>{{ news.headline }}</p>
+
+<div class="time">Published just now</div>
+
+</div>
+<script>
+setTimeout(function(){
+location.reload();
+},8000);
+</script>
+
+{% endfor %}
+
+</div>
+
+</body>
+</html>
